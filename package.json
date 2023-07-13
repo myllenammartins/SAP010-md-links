@@ -11,5 +11,14 @@
   },
   "dependencies": {
     "chalk": "^5.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.44.0",
+    "jest": "^29.6.1"
+  },
+  "scripts": {
+    "pretest": "npm run eslint",
+    "test": "jest --coverage",
+    "eslint": "eslint --ext .js src/ test/"
   }
 }
