@@ -2,7 +2,8 @@ module.exports = {
     "env": {
         "browser": true,
         "commonjs": true,
-        "es2021": true
+        "es2021": true,
+        "jest": true
     },
     "extends": "eslint:recommended",
     "overrides": [
@@ -25,9 +26,5 @@ module.exports = {
         "semi": ["error", "always"],
         "indent": ["error", 4],
         "comma-spacing": ["error", { "before": false, "after": true }]
-    },
-    "globals": {
-        "describe": "readonly",
-        "test": "readonly"
     }
 };

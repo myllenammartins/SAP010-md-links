@@ -3,7 +3,7 @@ const path = require('path');
 
 // ler diretório
 function readDir(pathDir) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         fs.promises.readdir(pathDir)
             .then((files) => {
                 const reading = files.filter(file => {
@@ -15,9 +15,6 @@ function readDir(pathDir) {
                 return Promise.all(reading).then((result) => {
                     resolve(result);
                 });
-            })
-            .catch((error) => {
-                reject(error);
             });
     });
 }
@@ -25,9 +22,6 @@ function readDir(pathDir) {
 readDir('./src/file')
     .then((result) => {
         console.log(result);
-    })
-    .catch((error) => {
-        console.error(error);
     });
 
 // ler arquivo(file)
