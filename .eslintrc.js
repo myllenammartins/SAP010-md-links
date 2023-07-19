@@ -11,6 +11,9 @@ module.exports = {
             "env": {
                 "node": true
             },
+            "globals": {
+                "process": "readonly"
+            },
             "files": [
                 ".eslintrc.{js,cjs}"
             ],
@@ -25,6 +28,7 @@ module.exports = {
     "rules": {
         "semi": ["error", "always"],
         "indent": ["error", 4],
-        "comma-spacing": ["error", { "before": false, "after": true }]
+        "comma-spacing": ["error", { "before": false, "after": true }],
+        "no-unused-vars": ["warn", { argsIgnorePattern: '^_' }]
     }
 };

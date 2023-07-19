@@ -1,4 +1,4 @@
-// const { read } = require('./fileSystem.js');
+// const { read } = require('./index.js');
 
 const mdLinks = () => {
 
