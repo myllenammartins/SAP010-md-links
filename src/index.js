@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 function readFile(file) {
     const isMd = path.extname(file) === '.md';
     if (!isMd) {
-        const errorMessage = new Error('Error: O arquivo não é Markdown');
+        const errorMessage = new Error('O arquivo não é Markdown');
         return Promise.reject(errorMessage);
     }
     return fs.promises.readFile(file, 'utf8').then((data) => ({
@@ -43,8 +43,8 @@ function validateLinks(arrayLinks) {
                     return link;
                 })
                 .catch(() => {
-                    link.status = 'fail';
-                    link.ok = 'fail';
+                    link.status = 404;
+                    link.ok = false;
                     return link;
                 });
         })
@@ -101,8 +101,3 @@ module.exports = {
     mdLinks,
     statsFunction,
 };
-
-/*read('./src/file/files.md')
-    .then((path) => {
-        console.log(path);
-    });*/
