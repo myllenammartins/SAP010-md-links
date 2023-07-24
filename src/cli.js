@@ -1,7 +1,27 @@
-const { mdLinks, statsFunction } = require('./index.js');
+const { mdLinks } = require('./index.js');
 
 const chalk = require('chalk');
 const Table = require('cli-table3');
+
+function statsFunction(arrayLinks) {
+    let hrefList = [];
+    let broken = 0;
+    arrayLinks.forEach((element) => {
+        hrefList.push(element.href);
+        if (element.ok === 'fail') {
+            broken++;
+        }
+    });
+
+    const uniqueLinks = new Set(hrefList);
+
+    const objStats = {
+        total: hrefList.length,
+        unique: uniqueLinks.size,
+        broken: broken,
+    };
+    return objStats;
+}
 
 const [, , path, ...args] = process.argv; // eslint-disable-line
 

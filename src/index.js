@@ -77,27 +77,11 @@ function mdLinks(path, options = { validate: false }) {
     });
 }
 
-function statsFunction(arrayLinks) {
-    let hrefList = [];
-    let broken = 0;
-    arrayLinks.forEach((element) => {
-        hrefList.push(element.href);
-        if (element.ok === 'fail') {
-            broken++;
-        }
-    });
-
-    const uniqueLinks = new Set(hrefList);
-
-    const objStats = {
-        total: hrefList.length,
-        unique: uniqueLinks.size,
-        broken: broken,
-    };
-    return objStats;
-}
-
 module.exports = {
-    mdLinks,
-    statsFunction,
+    readDir,
+    readFile,
+    read,
+    validateLinks,
+    getLinks,
+    mdLinks
 };
