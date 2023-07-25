@@ -2,9 +2,9 @@
 
 ## Resumo do projeto
 
-Neste projeto, foi desenvolvido uma ferramenta de linha de comando (CLI) assim como uma biblioteca (library) em Javascript para Análise de Links em Arquivos Markdown. Um projeto backend onde foi utilizado as tecnologias Node.js, para o desenvolvimento do código, e o Jest, para execusão dos testes unitários. 
+Neste projeto, foi desenvolvido uma ferramenta de **linha de comando (CLI)** assim como uma biblioteca (library) em Javascript para **Análise de Links em Arquivos Markdown**. Um projeto backend onde foi utilizado as tecnologias Node.js, para o desenvolvimento do código, e o Jest, para execusão dos testes unitários. 
 
-O propósito fundamental dessa biblioteca é possibilitar a leitura de arquivos no formato Markdown, localizados na máquina do usuário, e realizar uma análise da presença de links nesses documentos. A flexibilidade da biblioteca permite não somente a identificação de links, mas também a verificação de sua validade e a obtenção de estatísticas sobre cada um deles.
+O propósito fundamental dessa biblioteca é possibilitar a leitura de arquivos no formato Markdown, localizados na máquina do usuário, e realizar uma análise da presença de links nesses documentos. A flexibilidade da biblioteca permite não somente a **identificação de links**, mas também a **verificação de sua validade e a obtenção de estatísticas sobre cada um deles**.
 
 Para uma melhor visualização das informações no terminal, foi feita uma estilização da CLI utilizando o chalk-cli e cli-table3.
 
@@ -93,8 +93,7 @@ Broken: 1
 Para aprimorar a visualização do planejamento de tarefas e objetivos a serem alcançados, a organização do projeto foi representada por meio de um fluxograma, conforme ilustrado abaixo:
 
 <div align="center">
- <img alt="Fluxograma" width="550" src="https://user-images.githubusercontent.com/99662544/255694008-0443b6e6-655a-4444-99e3-aa98c34b89b2.png
-" /><br>
+ <img alt="Fluxograma" width="550" src="https://user-images.githubusercontent.com/99662544/255694008-0443b6e6-655a-4444-99e3-aa98c34b89b2.png"/><br>
 </div>
 
 ***
