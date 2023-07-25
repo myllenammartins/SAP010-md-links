@@ -1,8 +1,20 @@
 {
-  "name": "md-links",
+  "name": "myllenammartins-md-links",
+  "license": "MIT",
+  "author": "Myllena M. Martins",
   "bin": {
     "md-links": "cli.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myllenammartins/SAP010-md-links.git"
+  },
+  "keywords": [
+    "node",
+    "markdown",
+    "CLI",
+    "API"
+  ],
   "version": "0.1.0",
   "engines": {
     "node": ">=16.x"
@@ -16,6 +28,7 @@
     "chalk": "^4.1.2",
     "cli-table3": "^0.6.3",
     "fs": "^0.0.1-security",
+    "md-links": "github:myllenammartins/SAP010-md-links",
     "node-fetch": "^2.6.12"
   },
   "devDependencies": {
