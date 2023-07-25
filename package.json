@@ -4,7 +4,7 @@
   "author": "Myllena M. Martins",
   "version": "0.1.0",
   "bin": {
-    "md-links": "cli.js"
+    "md-links": "./src/cli.js"
   },
   "repository": {
     "type": "git",

@@ -33,19 +33,16 @@ através do **terminal**:
 
 `md-links <path-to-file> [options]`
 
-Por exemplo:
-
-```sh
-$ md-links ./some/example.md
-./some/example.md http://algo.com/2/3/ Link de algo
-./some/example.md https://outra-coisa-.net/algum-doc.html algum doc
-./some/example.md http://google.com/ Google
-```
-
 Deve identificar o arquivo Markdown (a partir da rota que recebeu como
 argumento), analisar o arquivo Markdown e imprimir os links que vão sendo
 encontrados, junto com a rota do arquivo onde aparece e o texto encontrado
 dentro do link (truncado 50 caracteres).
+
+Por exemplo:
+
+<div align="center">
+ <img alt="path" width="400" src="https://user-images.githubusercontent.com/99662544/256058839-466c82e2-81a9-4ac8-83c6-ce55c7e18aac.png"/><br>
+</div>
 
 #### Options
 
@@ -57,12 +54,9 @@ uma URL que responde ok, então consideraremos o link como ok.
 
 Por exemplo:
 
-```sh
-$ md-links ./some/example.md --validate
-./some/example.md http://algo.com/2/3/ ok 200 Link de algo
-./some/example.md https://outra-coisa-.net/algum-doc.html fail 404 algum doc
-./some/example.md http://google.com/ ok 301 Google
-```
+<div align="center">
+ <img alt="validate" width="500" src="https://user-images.githubusercontent.com/99662544/256056584-2bbe34c8-b84f-4e13-9864-39aee8de481e.png"/><br>
+</div>
 
 Vemos que o _output_ neste caso inclui a palavra `ok` e `fail` depois da URL,
 assim como o status da resposta recebida à requisição HTTP feita pela URL.
@@ -72,21 +66,16 @@ assim como o status da resposta recebida à requisição HTTP feita pela URL.
 Se passamos a opção `--stats` o output (saída) será um texto com estatísticas
 básicas sobre os links.
 
-```sh
-$ md-links ./some/example.md --stats
-Total: 3
-Unique: 3
-```
+<div align="center">
+ <img alt="stats" width="500" src="https://user-images.githubusercontent.com/99662544/256056498-5d3a9e8d-200c-4472-bc10-25af6f112fc7.png"/><br>
+</div>
 
 Também podemos combinar `--stats` e `--validate` para obter estatísticas que
 necessitem dos resultados da validação.
 
-```sh
-$ md-links ./some/example.md --stats --validate
-Total: 3
-Unique: 3
-Broken: 1
-```
+<div align="center">
+ <img alt="statsAndValidate" width="500" src="https://user-images.githubusercontent.com/99662544/256056384-79fb7279-ca58-49c4-b15d-94161f5a1780.png"/><br>
+</div>
 
 
 ## Fluxograma

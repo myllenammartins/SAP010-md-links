@@ -82,6 +82,7 @@ function mdLinksCli(path, options) {
                         console.log(chalk.yellow(`Link: ${link.href}`));
                         console.log(chalk.cyan(`Text: ${link.text}`));
                         console.log(chalk.green(`File: ${link.file}`));
+                        console.log(chalk.white(`_______________________`));
                     });
                 } else {
                     console.log(chalk.bgRed('Não há links neste arquivo.'));
