@@ -2,7 +2,7 @@
 
 ## Resumo do projeto
 
-Neste projeto, foi desenvolvido uma ferramenta de **linha de comando (CLI)** assim como uma biblioteca (library) em Javascript para **Análise de Links em Arquivos Markdown**. Um projeto backend onde foi utilizado as tecnologias Node.js, para o desenvolvimento do código, e o Jest, para execusão dos testes unitários. 
+Neste projeto, foi desenvolvido uma ferramenta de **linha de comando (CLI)** assim como uma biblioteca (library) em Javascript para **Análise de Links em Arquivos Markdown**. Um projeto **Back-end** onde foi utilizado as tecnologias Node.js, para o desenvolvimento do código, e o Jest, para execusão dos testes unitários. 
 
 O propósito fundamental dessa biblioteca é possibilitar a leitura de arquivos no formato Markdown, localizados na máquina do usuário, e realizar uma análise da presença de links nesses documentos. A flexibilidade da biblioteca permite não somente a **identificação de links**, mas também a **verificação de sua validade e a obtenção de estatísticas sobre cada um deles**.
 

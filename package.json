@@ -2,6 +2,7 @@
   "name": "myllenammartins-md-links",
   "license": "MIT",
   "author": "Myllena M. Martins",
+  "version": "0.1.0",
   "bin": {
     "md-links": "cli.js"
   },
@@ -15,7 +16,6 @@
     "CLI",
     "API"
   ],
-  "version": "0.1.0",
   "engines": {
     "node": ">=16.x"
   },
