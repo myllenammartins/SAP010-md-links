@@ -93,8 +93,7 @@ Broken: 1
 Para aprimorar a visualização do planejamento de tarefas e objetivos a serem alcançados, a organização do projeto foi representada por meio de um fluxograma, conforme ilustrado abaixo:
 
 <div align="center">
- <img alt="Fluxograma" width="550" src="https://user-images.githubusercontent.com/99662544/255694008-0443b6e6-655a-4444-99e3-aa98c34b89b2.png
-" /><br>
+ <img alt="Fluxograma" width="550" src="https://user-images.githubusercontent.com/99662544/255694008-0443b6e6-655a-4444-99e3-aa98c34b89b2.png"/><br>
 </div>
 
 ***
