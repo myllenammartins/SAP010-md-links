@@ -15,12 +15,22 @@ function readFile(file) {
 }
 
 function readDir(pathDir) {
-    return fs.promises.readdir(pathDir).then((files) => {
-        const reading = files
-            .filter((file) => path.extname(file) === '.md')
-            .map((file) => readFile(path.resolve(pathDir, file)));
-        return Promise.all(reading);
+    const files = fs.readdirSync(pathDir);
+    const markdownFiles = [];
+  
+    files.forEach((file) => {
+        const filePath = path.resolve(pathDir, file);
+        const stats = fs.statSync(filePath);
+  
+        if (stats.isDirectory()) {
+            const subDirectoryFiles = readDir(filePath);
+            markdownFiles.push(...subDirectoryFiles);
+        } else if (path.extname(file) === '.md') {
+            markdownFiles.push(filePath);
+        }
     });
+  
+    return markdownFiles;
 }
 
 function read(path) {
