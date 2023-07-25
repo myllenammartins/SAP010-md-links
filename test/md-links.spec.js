@@ -1,6 +1,5 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
-// const path = require('path');
 
 const {
     readFile,
@@ -169,7 +168,7 @@ describe('validateLinks', () => {
         });
     });
 
-    it('deve retornar um erro para links inválidos e marcá-los como "fail"', () => {
+    test('deve retornar um erro para links inválidos e marcá-los como "fail"', () => {
         const link1 = { href: 'https://example.com', text: 'Example' };
         const link2 = { href: 'https://google.com', text: 'Google' };
         const arrayLinks = [link1, link2];
@@ -192,7 +191,7 @@ describe('validateLinks', () => {
 
 // TESTE - FUNÇÃO PARA EXTRAIR OS DADOS DOS LINKS
 describe('getLinks', () => {
-    it('deve extrair dados dos links', () => {
+    test('deve extrair dados dos links', () => {
         // Caso de teste com um link no texto
         const data1 = 'Este é um link: [Google](https://www.google.com)';
         const filePath1 = '/caminho/do/arquivo1.md';
@@ -226,7 +225,6 @@ describe('getLinks', () => {
         const filePath3 = '/caminho/do/arquivo3.md';
         const expectedLinks3 = [];
   
-        // Executa a função getLinks para cada caso de teste e verifica o resultado
         expect(getLinks(data1, filePath1)).toEqual(expectedLinks1);
         expect(getLinks(data2, filePath2)).toEqual(expectedLinks2);
         expect(getLinks(data3, filePath3)).toEqual(expectedLinks3);
