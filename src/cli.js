@@ -28,8 +28,7 @@ const [, , path, ...args] = process.argv; // eslint-disable-line
 
 const options = {
     validate: false,
-    stats: false,
-    validateAndStats: false
+    stats: false
 };
 
 args.forEach((arg) => {
@@ -37,9 +36,6 @@ args.forEach((arg) => {
         options.validate = true;
     } else if (arg === '--stats') {
         options.stats = true;
-    }
-    if (args.includes('--validate') && args.includes('--stats')) {
-        options.validateAndStats = true;
     }
 });
 
