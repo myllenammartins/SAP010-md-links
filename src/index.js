@@ -8,10 +8,11 @@ function readFile(file) {
         const errorMessage = new Error('O arquivo não é Markdown');
         return Promise.reject(errorMessage);
     }
-    return fs.promises.readFile(file, 'utf8').then((data) => ({
-        file: file,
-        data: data,
-    }));
+    return fs.promises.readFile(file, 'utf8')
+        .then((data) => ({
+            file: file,
+            data: data,
+        }));
 }
 
 function readDir(pathDir) {
@@ -21,7 +22,7 @@ function readDir(pathDir) {
     files.forEach((file) => {
         const filePath = path.resolve(pathDir, file);
         const stats = fs.statSync(filePath);
-  
+
         if (stats.isDirectory()) {
             const subDirectoryFiles = readDir(filePath);
             markdownFiles.push(...subDirectoryFiles);
@@ -34,13 +35,14 @@ function readDir(pathDir) {
 }
 
 function read(path) {
-    return fs.promises.stat(path).then((infoStatsObj) => {
-        if (infoStatsObj.isDirectory(path)) {
-            return readDir(path);
-        } else {
-            return readFile(path);
-        }
-    });
+    return fs.promises.stat(path)
+        .then((infoStatsObj) => {
+            if (infoStatsObj.isDirectory(path)) {
+                return readDir(path);
+            } else {
+                return readFile(path);
+            }
+        });
 }
 
 function validateLinks(arrayLinks) {
@@ -48,8 +50,8 @@ function validateLinks(arrayLinks) {
         arrayLinks.map((link) => {
             return fetch(link.href)
                 .then((response) => {
-                    link.status = response.status;
-                    link.ok = response.ok ? 'ok' : 'fail';
+                    link.status = response.status; // status da resposta
+                    link.ok = response.ok ? 'ok' : 'fail'; // se for bem sucedida 'ok' caso contrário 'fail'
                     return link;
                 })
                 .catch(() => {
@@ -75,16 +77,18 @@ function getLinks(data, filePath) {
 }
 
 function mdLinks(path, options = { validate: false }) {
-    return read(path).then((data) => {
-        const links = getLinks(data.data, data.file);
-        if (!options.validate) {
-            return { links };
-        } else {
-            return validateLinks(links).then((validatedLinks) => {
-                return { links: validatedLinks };
-            });
-        }
-    });
+    return read(path)
+        .then((data) => {
+            const links = getLinks(data.data, data.file);
+            if (!options.validate) {
+                return { links };
+            } else {
+                return validateLinks(links)
+                    .then((validatedLinks) => {
+                        return { links: validatedLinks };
+                    });
+            }
+        });
 }
 
 module.exports = {
